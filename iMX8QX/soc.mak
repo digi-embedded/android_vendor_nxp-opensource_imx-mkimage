@@ -115,7 +115,7 @@ flash_linux_m4_xip: $(MKIMG) mx8qx-ahab-container.img scfw_tcm.bin u-boot-atf-co
 	./$(QSPI_PACKER) $(QSPI_HEADER)
 
 flash_regression_linux_m4: $(MKIMG) mx8qx-ahab-container.img scfw_tcm.bin u-boot-atf.bin m4_image.bin
-	./$(MKIMG) -soc QX -rev B0 -append mx8qx-ahab-container.img -c -flags 0x00200000 -scfw scfw_tcm.bin -ap u-boot-atf.bin a35 0x80000000 -p3 -m4 m4_image.bin 0 0x34FE0000 -out flash.bin
+	./$(MKIMG) -soc QX -rev B0 -append mx8qx-ahab-container.img -c -scfw scfw_tcm.bin -ap u-boot-atf.bin a35 0x80000000 -m4 m4_image.bin 0 0x34FE0000 -out flash.bin
 
 flash_regression_linux_m4_ddr: $(MKIMG) mx8qx-ahab-container.img scfw_tcm.bin u-boot-atf.bin m4_image.bin
 	./$(MKIMG) -soc QX -rev B0 -append mx8qx-ahab-container.img -c -flags 0x00200000 -scfw scfw_tcm.bin -ap u-boot-atf.bin a35 0x80000000 -p3 -m4 m4_image.bin 0 0x88000000 -out flash.bin
